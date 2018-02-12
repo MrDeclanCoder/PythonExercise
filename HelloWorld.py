@@ -1,5 +1,11 @@
 from square import power
+from recursion import recursion
 from variableparameter import calc, product
+
+print(recursion(5))
+print(recursion(100))
+
+print('*******************')
 
 print(power(5))
 print(power(5, 4))
