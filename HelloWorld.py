@@ -1,8 +1,39 @@
 from square import power
 from recursion import recursion
 from variableparameter import calc, product
-from util import trim
+from util import findMinAndMax, trim
+import os
 
+L1 = ['Hello', 'World', 18, 'Apple', None]
+print([s.lower() for s in L1 if isinstance(s, str)])
+
+print('******************')
+print([d for d in os.listdir('.')])
+
+L = [x * y for x in range(1, 11) for y in range(1, 11, 2)]
+print(len(L), L)
+print('******************')
+# 测试
+if findMinAndMax([]) != (None, None):
+    print('测试失败!1')
+elif findMinAndMax([7]) != (7, 7):
+    print('测试失败!2')
+elif findMinAndMax([7, 1]) != (1, 7):
+    print('测试失败!3')
+elif findMinAndMax([7, 1, 3, 9, 5]) != (1, 9):
+    print('测试失败!4')
+else:
+    print('测试成功!')
+
+print('******************')
+for i, value in enumerate(['a', 'b', 'c']):
+    print(i, value)
+
+d = {'a': 1, 'b': 2, 'c': 3}
+for key in d:
+    print(key)
+
+print('******************')
 # 测试:
 if trim('hello  ') != 'hello':
     print('1测试失败!', trim('hello  '))
