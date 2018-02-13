@@ -1,3 +1,4 @@
+# 去除首尾空格
 def trim(s):
     if '' == s:
         print('1', s)
