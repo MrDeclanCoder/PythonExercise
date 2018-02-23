@@ -1,9 +1,56 @@
+# -*- coding: utf-8 -*-
 from square import power
 from recursion import recursion
 from variableparameter import calc, product
 from util import findMinAndMax, trim
 from collections import Iterable
 import os
+
+
+def is_odd(n):
+    return n % 2 == 1
+
+
+L = list(filter(is_odd, range(1, 20)))
+print(L)
+L = list(filter(lambda x: x % 2 == 1, range(1, 20)))
+print(L)
+
+print('***********************')
+
+
+def createCounter():
+    n = 0
+
+    def counter():
+        nonlocal n
+        n = n + 1
+        return n
+
+    return counter
+
+
+def createCounter2():
+    n = [0]
+
+    def counter():
+        n[0] += 1
+
+        return n[0]
+
+    return counter
+
+
+# 测试:
+counterA = createCounter2()
+print(counterA(), counterA(), counterA(), counterA(), counterA())  # 1 2 3 4 5
+counterB = createCounter2()
+if [counterB(), counterB(), counterB(), counterB()] == [1, 2, 3, 4]:
+    print('测试通过!')
+else:
+    print('测试失败!')
+
+print('**********************')
 
 
 def f(x):
