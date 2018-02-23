@@ -2,8 +2,43 @@ from square import power
 from recursion import recursion
 from variableparameter import calc, product
 from util import findMinAndMax, trim
+from collections import Iterable
 import os
 
+
+def f(x):
+    return x * x
+
+
+r = map(f, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+# 由于结果r是一个Iterator，Iterator是惰性序列，因此通过list()函数让它把整个序列都计算出来并返回一个list
+print(list(r))
+
+print('**********************')
+print(abs)
+print(abs(-11))
+
+# 首先获得一个Iterator对象:
+it = iter([1, 2, 3, 4, 5])
+# 循环
+while True:
+    try:
+        # 获得下一个值
+        x = next(it)
+        print(x)
+    except StopIteration:
+        print('StopIteration happened')
+        break
+
+print(iter('12345'))
+print(x for x in range(10))
+print(isinstance([], Iterable))
+print(isinstance({}, Iterable))
+print(isinstance('56165564', Iterable))
+print(isinstance(56165564, Iterable))
+print(isinstance('fafagab', Iterable))
+
+print('*******************')
 L1 = ['Hello', 'World', 18, 'Apple', None]
 print([s.lower() for s in L1 if isinstance(s, str)])
 
