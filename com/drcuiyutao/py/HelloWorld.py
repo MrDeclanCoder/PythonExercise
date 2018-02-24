@@ -5,6 +5,14 @@ from variableparameter import calc, product
 from util import findMinAndMax, trim
 from collections import Iterable
 import os
+import functools
+
+int2 = functools.partial(int, base=8)
+
+print('100001 = ', int2('100001'))
+print('101011 = ', int2('101011'))
+
+print('**************************')
 
 
 def is_odd(n):
