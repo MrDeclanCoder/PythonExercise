@@ -9,7 +9,9 @@ import sys
 import os
 import pickle
 import json
+import time
 from io import BytesIO
+
 
 def test():
     args = sys.argv
@@ -65,9 +67,12 @@ class Fib(object):
 
 
 if __name__ == '__main__':
+    # a = int(time.mktime(time.strptime('YYYY-mm-dd HH:MM:SS', '%Y-%m-%d %H:%M:%S')))
+    print(time.localtime(1520524800))
+
     human = Human('Mike')
-    print(json.dumps(human,default=lambda human:human.__dict__))
-    with open('human.txt','rb') as f:
+    print(json.dumps(human, default=lambda human: human.__dict__))
+    with open('human.txt', 'rb') as f:
         d = pickle.load(f)
         print(d)
     # print(human)
